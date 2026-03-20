@@ -54,9 +54,11 @@ exports.deleteOrder = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 exports.getCustomerOrders = async (req, res) => {
   try {
+    const Order = require("../models/Order.js");
+
+    //populate replaces the category id (stored in product) with the actual category document
     const orders = await Order.find({ customer: req.params.id }).populate("products.product");
     res.status(200).json(orders);
   } catch (err) {
