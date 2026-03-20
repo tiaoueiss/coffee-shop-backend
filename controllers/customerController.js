@@ -47,7 +47,6 @@ exports.deleteCustomer = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
 exports.getCustomerOrders = async (req, res) => {
   try {
     const Order = require("../models/Order.js");
