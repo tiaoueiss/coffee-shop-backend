@@ -60,22 +60,28 @@ This project implements a backend API that supports full CRUD operations for man
 ```
 coffee-shop-api/
 ├── config/
-│   ├── mongodb.js          # MongoDB connection setup
-│   └── sqlite.js           # SQLite/Sequelize connection setup
+│   ├── mongodb.js             # MongoDB connection setup
+│   └── sqlite.js              # SQLite/Sequelize connection setup
 ├── models/
-│   ├── Customer.js          # Mongoose model
-│   ├── Category.js          # Mongoose model
-│   ├── Product.js           # Mongoose model
-│   ├── Order.js             # Mongoose model
-│   └── Feedback.js          # Sequelize model (SQLite)
+│   ├── Customer.js            # Mongoose model
+│   ├── Category.js            # Mongoose model
+│   ├── Product.js             # Mongoose model
+│   ├── Order.js               # Mongoose model
+│   └── Feedback.js            # Sequelize model (SQLite)
+├── controllers/
+│   ├── customerController.js  # Customer CRUD logic
+│   ├── categoryController.js  # Category CRUD logic
+│   ├── productController.js   # Product CRUD logic
+│   ├── orderController.js     # Order CRUD logic
+│   └── feedbackController.js  # Feedback CRUD logic (SQLite)
 ├── routes/
-│   ├── customerRoutes.js
-│   ├── categoryRoutes.js
-│   ├── productRoutes.js
-│   ├── orderRoutes.js
-│   └── feedbackRoutes.js
-├── .env                     # Environment variables
-├── server.js                # Entry point
+│   ├── customerRoutes.js      # Customer route definitions
+│   ├── categoryRoutes.js      # Category route definitions
+│   ├── productRoutes.js       # Product route definitions
+│   ├── orderRoutes.js         # Order route definitions
+│   └── feedbackRoutes.js      # Feedback route definitions
+├── .env                       # Environment variables
+├── server.js                  # Entry point
 ├── package.json
 └── README.md
 ```
