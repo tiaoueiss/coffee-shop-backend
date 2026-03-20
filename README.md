@@ -137,7 +137,7 @@ coffee-shop-api/
 | PUT    | `/api/feedbacks/:id`  | Update a feedback by ID     |
 | DELETE | `/api/feedbacks/:id`  | Delete a feedback by ID     |
 
--
+---
 ## 🔄 NoSQL vs SQL Comparison
 
 | Aspect              | MongoDB (NoSQL)                              | SQLite (SQL)                              |
