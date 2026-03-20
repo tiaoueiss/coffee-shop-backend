@@ -28,6 +28,17 @@ exports.getFeedbackById = async (req, res) => {
   }
 };
 
+exports.updateFeedback = async (req, res) => {
+  try {
+    const feedback = await Feedback.findByPk(req.params.id);
+    if (!feedback) return res.status(404).json({ error: "Feedback not found" });
+    await feedback.update(req.body);
+    res.status(200).json(feedback);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
 exports.deleteFeedback = async (req, res) => {
   try {
     const feedback = await Feedback.findByPk(req.params.id);
