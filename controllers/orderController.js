@@ -39,6 +39,7 @@ exports.updateOrder = async (req, res) => {
     const updated = await Order.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
+    if (!updated) return res.status(404).json({ error: "Order not found" });
     res.status(200).json(updated);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -48,16 +49,15 @@ exports.updateOrder = async (req, res) => {
 // DELETE
 exports.deleteOrder = async (req, res) => {
   try {
-    await Order.findByIdAndDelete(req.params.id);
-    res.status(204).send();
+    const deleted = await Order.findByIdAndDelete(req.params.id);
+    if (!deleted) return res.status(404).json({ error: "Order not found" });
+    res.status(200).json({ message: "Order deleted" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 exports.getCustomerOrders = async (req, res) => {
   try {
-    const Order = require("../models/Order.js");
-
     //populate replaces the category id (stored in product) with the actual category document
     const orders = await Order.find({ customer: req.params.id }).populate("products.product");
     res.status(200).json(orders);

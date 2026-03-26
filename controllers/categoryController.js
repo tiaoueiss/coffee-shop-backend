@@ -1,4 +1,5 @@
 const Category = require("../models/Category.js");
+const Product = require("../models/Product.js");
 
 exports.createCategory = async (req, res) => {
   try {
@@ -50,7 +51,6 @@ exports.deleteCategory = async (req, res) => {
 
 exports.getCategoryProducts = async (req, res) => {
   try {
-    const Product = require("../models/Product.js");
     const products = await Product.find({ category: req.params.id });
     res.status(200).json(products);
   } catch (err) {
