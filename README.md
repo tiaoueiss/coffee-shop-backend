@@ -144,22 +144,8 @@ coffee-shop-api/
 | DELETE | `/api/feedbacks/:id`  | Delete a feedback by ID     |
 
 ---
-## 🔄 NoSQL vs SQL Comparison
 
-| Aspect              | MongoDB (NoSQL)                              | SQLite (SQL)                              |
-|---------------------|----------------------------------------------|-------------------------------------------|
-| Schema              | Flexible, schema-less                        | Fixed schema, structured                  |
-| Relationships       | References & embedding                       | Foreign keys & joins                      |
-| Use Case            | Complex entities with relationships          | Simple, standalone data (logs, feedback)  |
-| Querying            | JSON-like queries, aggregation pipeline      | SQL queries (SELECT, JOIN, WHERE)         |
-| Scalability         | Horizontal (sharding)                        | Vertical (single file)                    |
-| Best For            | Rapidly evolving data models                 | Structured, relational data               |
-
-In this project, MongoDB handles the core business entities (Customers, Products, Categories, Orders) where flexible schemas and relationship references are beneficial. SQLite handles the Feedback entity as a simple, standalone table demonstrating relational database integration.
-
----
-
-## 👤 Author
+## 👤 Authors
 
 **Tia Maria Oueis & Gaelle Medawar** — CSC456 Advanced Web Programming
 
