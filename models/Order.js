@@ -2,11 +2,13 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
   {
+    // many-to-one relationship with Customer
     customer: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Customer",
       required: true,
     },
+    // many-to-many relationship with Product
     products: [
       {
         product: {
@@ -26,7 +28,7 @@ const orderSchema = new mongoose.Schema(
     },
     totalAmount: {
       type: Number,
-      required: true,
+      default: 0,
     },
     status: {
       type: String,

@@ -7,6 +7,7 @@ const productSchema = new mongoose.Schema(
     price:{type: Number,required:true},
     size:{type:String, enum:['Small','Medium','Large'], default:'Small'},
     isAvailable:{type: Boolean, default:true, required:true},
+    // many-to-one relationship with Category
     category:{
         type:mongoose.Schema.ObjectId,
         ref:"Category",
