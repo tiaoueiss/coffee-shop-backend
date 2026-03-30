@@ -49,14 +49,3 @@ exports.deleteFeedback = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-exports.getFeedbackByCustomer = async (req, res) => {
-  try {
-    const feedbacks = await Feedback.findAll({
-      where: { customerName: req.params.customerName },
-    });
-    res.status(200).json(feedbacks);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
